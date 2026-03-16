@@ -1,0 +1,31 @@
+{
+  "name": "insta-feed-auto-e2e-tests",
+  "version": "1.0.0",
+  "description": "End-to-end Playwright tests for the insta-feed-auto WordPress plugin",
+  "private": true,
+  "scripts": {
+    "test": "playwright test",
+    "test:headed": "playwright test --headed",
+    "test:ui": "playwright test --ui",
+    "test:debug": "playwright test --debug",
+    "test:report": "npx playwright show-report",
+    "test:chrome": "npx playwright test --project=chromium",
+    "setup": "npx playwright install chromium"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.58.2",
+    "dotenv": "^17.3.1"
+  },
+  "main": "playwright.config.js",
+  "directories": {
+    "test": "tests"
+  },
+  "dependencies": {
+    "playwright": "^1.58.2",
+    "playwright-core": "^1.58.2"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module"
+}
