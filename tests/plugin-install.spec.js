@@ -53,7 +53,7 @@ test.describe('WordPress Plugin Install', () => {
     await page.goto('/wp-admin/plugins.php');
 
     // Find the plugin row
-    const pluginRow = page.locator(`tr[data-slug="${PLUGIN_SLUG}"]`);
+    const pluginRow = page.locator(`tr[data-slug="${PLUGIN_SLUG}"]`).first();
 
     if (await pluginRow.isVisible().catch(() => false)) {
       // Check if already active
@@ -86,7 +86,7 @@ test.describe('WordPress Plugin Install', () => {
   test('should show the plugin in the active plugins list', async ({ page }) => {
     await page.goto('/wp-admin/plugins.php?plugin_status=active');
 
-    const pluginRow = page.locator(`tr[data-slug="${PLUGIN_SLUG}"]`);
+    const pluginRow = page.locator(`tr[data-slug="${PLUGIN_SLUG}"]`).first();
     await expect(pluginRow).toBeVisible();
     await expect(pluginRow).toHaveClass(/active/);
   });

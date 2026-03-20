@@ -36,6 +36,10 @@ export default defineConfig({
     navigationTimeout: 15_000,
 
     ignoreHTTPSErrors: true,
+
+    launchOptions: {
+      slowMo: 1000, // 1 second delay between actions
+    },
   },
 
   projects: [
